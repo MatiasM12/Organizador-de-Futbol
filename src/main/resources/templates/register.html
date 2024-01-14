@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/main/resources/static/css/register.css">
+    <title>Registro</title>
+</head>
+<body class="pattern-bg">
+    <div class="login-container register-container">
+        <h1>Registro</h1>
+        <form id="register-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="mail">Correo Electrónico:</label>
+            <input type="email" id="mail" name="mail" required>
+
+            <label for="photo">Foto (URL):</label>
+            <input type="text" id="photo" name="photo">
+
+            <button type="button" onclick="validateRegistration()">Registrarse</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
