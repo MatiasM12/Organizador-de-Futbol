@@ -47,7 +47,7 @@
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
-		    <version>8.0.27</version> <!-- O la versión que estés utilizando -->
+		    <version>8.0</version> <!-- O la versión que estés utilizando -->
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
