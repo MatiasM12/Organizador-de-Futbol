@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/canchas.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Lista de Canchas</title>
+</head>
+<body>
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+
+        <h1>Lista de Canchas</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <main class="grid-container" id="canchasContainer">
+        <!-- Contenido de canchas será agregado dinámicamente aquí -->
+    </main>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Lista de Canchas</p>
+    </footer>
+    <script type="module" src="/js/canchas.js"></script>
+    <script>
+        function volverPagina() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

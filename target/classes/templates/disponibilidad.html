@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilidad de Canchas</title>
+    <link rel="stylesheet" href="/css/disponibilidad.css">
+</head>
+<body>
+
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Disponibilidad de Canchas</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+<main>
+    <section class="canchas-section">
+        <h2>Seleccione una Cancha</h2>
+        <ul class="canchas-list" id="canchasList">
+            <!-- Aquí se mostrarán las canchas obtenidas de la petición GET -->
+            <!-- Puedes generar estos elementos dinámicamente en JavaScript -->
+        </ul>
+    </section>
+
+    <section class="disponibilidad-section" id="disponibilidadSection" style="display: none;">
+        <h2>Disponibilidad</h2>
+
+        <ul class="horarios-list" id="horariosList">
+        </ul>
+    </section>
+</main>
+
+<div class="modal" id="notificacionesModal">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+        <!-- Contenido del modal -->
+        <h2>Notificaciones Pendientes</h2>
+        <ul id="notificacionesList">
+            <!-- Lista de notificaciones -->
+        </ul>
+        <button id="verPartidosBtn">Ver partidos</button>
+    </div>
+</div>
+
+<script type="module" src="/js/disponibilidad.js"></script>
+<script>
+    function volverPagina() {
+        window.location.href = '/inicio-dueño.html';
+    }
+</script>
+</body>
+</html>

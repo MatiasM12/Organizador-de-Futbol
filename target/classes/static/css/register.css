@@ -1,0 +1,136 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/img/jugador-de-futbol.png') repeat; 
+    background-color: #262626; 
+}
+
+#register-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.section-a,
+.section-b {
+    background-color: #333;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+label {
+    text-align: left;
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+}
+
+input,
+select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    width: auto;
+    background-color: #444;
+    color: #fff;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#error-message {
+    display: none;
+    position: fixed;
+    top: 50;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff0000;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#error-message p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+}
+
+#success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#success-message p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+}
+
+#success-message button {
+    background: #fff;
+    color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#success-message button:hover {
+    background: #2a602c;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    #register-form {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna cuando la pantalla es más estrecha */
+    }
+}

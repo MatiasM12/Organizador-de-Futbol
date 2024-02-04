@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Jugador</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/css/jugador.css">
+</head>
+<body>
+
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Informacion del jugador</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+    
+    <div class="container">
+        <div class="jugador-info" id="jugadorInfo">
+            <!-- Contenido del jugador se actualizará aquí -->
+        </div>
+
+        <div class="comentarios-section">
+            <h2>Comentarios</h2>
+            <ul id="comentariosList">
+                <!-- La lista de comentarios se actualizará aquí -->
+            </ul>
+            <button id="add-comment-button" onclick="openCommentModal()">Agregar Comentario</button>
+        </div>
+    </div>
+
+    <div class="modal" id="commentModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCommentModal()">&times;</span>
+            <h2>Agregar Comentario</h2>
+            <form id="commentForm">
+                <label for="comment">Comentario:</label>
+                <textarea id="comment" name="comment" required></textarea>
+
+                <label for="stars">Estrellas:</label>
+                <div class="rating">
+                    <span id="star1" data-value="1"></span>
+                    <span id="star2" data-value="2"></span>
+                    <span id="star3" data-value="3"></span>
+                    <span id="star4" data-value="4"></span>
+                    <span id="star5" data-value="5"></span>
+                </div>
+
+                <button type="submit" id="guardarCambiosBtn" class="guardarCambiosBtn">Enviar Comentario</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jugador</p>
+    </footer>
+</body>
+<script type="module" src="/js/jugador.js"></script>
+<script>
+    function volverPagina() {
+    window.location.href = 'jugadores.html';
+    }
+
+    function openCommentModal() {
+        document.getElementById('commentModal').style.display = 'flex';
+    }
+
+    function closeCommentModal() {
+        document.getElementById('commentModal').style.display = 'none';
+    }
+</script>
+</html>

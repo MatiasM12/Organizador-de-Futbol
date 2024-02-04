@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/partido.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Detalles del Partido</title>
+</head>
+<body>
+
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Detalles</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <div class="detalles-container">
+        <div class="cancha-info">
+            <img src="" alt="Imagen de la Cancha" id="imagenCancha">
+        </div>
+    
+        <div class="datos-cancha">
+            <h2 id="nombreCancha"></h2>
+            <p id="ubicacionCancha">Ubicación: </p>
+            <p id="horarioCancha">Horario: </p>
+            <p id="precioCancha">Precio: </p>
+        </div>
+    </div>
+    <div class="jugadores-seleccionados">
+        <div class="team-section" id="team1-section">
+            <h2>Team 1</h2>
+            <ul class="lista-jugadores" id="listaJugadoresTeam1">
+                <!-- La lista de jugadores del Team 1 se llenará aquí dinámicamente -->
+            </ul>
+            <button id="alineacion-team1">Alineacion</button>
+        </div>
+    
+        <div class="team-section" id="team2-section">
+            <h2>Team 2</h2>
+            <ul class="lista-jugadores" id="listaJugadoresTeam2">
+                <!-- La lista de jugadores del Team 2 se llenará aquí dinámicamente -->
+            </ul>
+            <button id="alineacion-team2">Alineacion</button>
+        </div>
+
+        <button id="cancelar-partido">Cancelar Partido</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Partido</p>
+    </footer>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <script type="module" src="/js/partido.js"></script>
+    <script>
+        function volverPagina() {
+            window.location.href = 'partidos.html';
+        }
+    </script>
+
+</body>
+</html>

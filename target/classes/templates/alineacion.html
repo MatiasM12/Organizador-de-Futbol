@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Alineación</title>
+    <link rel="stylesheet" href="/css/alineacion.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Alineacion</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <div class="cancha" id="cancha">
+        <!-- Círculos de jugadores aquí -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alineacion</p>
+    </footer>
+
+    <script  src="/js/alineacion.js"></script>
+    <script>
+        function volverPagina() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+header {
+    padding: 2rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+}
+
+.close-button,
+.notification-button{
+    background-color: #1a1a1a;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.close-button img,
+.notification-button img{
+    height: 30px;
+    width: 30px;
+}
+
+.notification-counter {
+    display: inline-block;
+    background-color: #D21312;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    margin-left: -25px;
+    margin-bottom: 25px; 
+}
+
+.cancha {
+    position: relative;
+    background-image: url('/img/cancha-vertical.jpg');
+    background-size: cover;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 26%;
+    height: 700px;
+}
+
+.jugador {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('/img/messi.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+footer {
+    text-align: center;
+    height: 70px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 2rem;
+        text-align: center;
+        gap: 50px;
+    }
+    .cancha {
+        width: 90%;
+        height: 500px;
+    }
+}

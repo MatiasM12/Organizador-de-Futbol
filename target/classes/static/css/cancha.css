@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 200px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.close-button,
+.notification-button{
+    background-color: #1a1a1a;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.close-button img,
+.notification-button img{
+    height: 30px;
+    width: 30px;
+}
+
+.notification-counter {
+    display: inline-block;
+    background-color: #D21312;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    margin-left: -25px;
+    margin-bottom: 25px; 
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+
+
+.cancha-info {
+    display: flex;
+    align-items: stretch; 
+    background-color: #282828;
+    word-break: break-all;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.cancha-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    max-width: 90%; 
+}
+
+.cancha-img {
+    max-width: 60%; 
+    border-radius: 8px;
+}
+
+
+.cancha-info:hover{
+    transform: scale(1.05); 
+}
+
+
+h2, p {
+    text-align: left;
+    margin: 0;
+    padding: 20px;
+    width: 100%;;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;   
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: #1a1a1a;
+    margin: 3% auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.cerrar-modal {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#notificacionesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notificacionesList li {
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+#notificacionesList li::before {
+    content: '\2022';
+    color: #D21312;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; 
+}
+
+#verPartidosBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#verPartidosBtn:hover {
+    background-color: #0056b3;
+}
+
+.disponibilidad-section {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.disponibilidad-section h2,
+.disponibilidad-section h3
+{
+    padding-left: 0px;
+    text-align: center;
+}
+
+.horarios-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horarios-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #282828;
+    border-radius: 8px;
+}
+
+.horarios-list li:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+
+footer {
+    text-align: center;
+    height: 70px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 320px) {
+    header h1{
+        font-size: 1.3rem;
+        width: 50px;
+        text-align: center;
+    }
+}
+    
+@media (max-width: 868px) {
+    header {
+        padding: 2rem;
+        
+        text-align: center;
+        gap: 50px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    .cancha-info {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cancha-details {
+        max-width: 100%; 
+    }
+    
+    .cancha-img {
+        max-width: 100%; 
+    }
+
+    .cancha-details,.cancha-img{
+        width: 100%;
+        align-items: center;
+    }
+    h2, p {
+        text-align: center;
+    }
+
+    .disponibilidad-section h2,
+    .disponibilidad-section h3
+    {
+        padding-left: 0px;
+        text-align: left;
+    }
+}
+

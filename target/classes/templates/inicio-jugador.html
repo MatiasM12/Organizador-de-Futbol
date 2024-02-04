@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/inicio-jugador.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Página de Inicio</title>
+</head>
+<body>
+    <header>
+        <button class="close-button"><img src="/img/cerrar-sesion.png" alt=""></button>
+        <h1>Inicio</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <main class="grid-container">
+
+        <a href="/armar-partido.html" class="card a">
+            <h2>Armar partido</h2>
+            <p>Alquila cancha e invita a tus amigos.</p>
+        </a>
+
+        <a href="/canchas.html" class="card b">
+            <h2>Canchas</h2>
+            <p>Explora las diferentes canchas disponibles.</p>
+        </a>
+
+        <a href="/partidos.html" class="card c">
+            <h2>Partidos</h2>
+            <p>Información sobre los próximos partidos.</p>
+        </a>
+
+        <a href="/jugadores.html" class="card d">
+            <h2>Lista de Jugadores</h2>
+            <p>Encuentra compañeros para tu próximo partido.</p>
+        </a>
+
+        <a href="/historial.html" class="card e">
+            <h2>Historial de Partidos</h2>
+            <p>Revisa tu historial de partidos como jugador.</p>
+        </a>
+
+        <a href="/perfil.html" class="card f">
+            <h2>Ver perfil</h2>
+            <p>Edita los datos de tu perfil.</p>
+        </a>
+        
+    </main>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Página de Inicio Futbolera</p>
+    </footer>
+
+    <script type="module" src="/js/inicio-jugador.js"></script>
+</body>
+</html>
