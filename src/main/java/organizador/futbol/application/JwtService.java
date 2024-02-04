@@ -27,19 +27,20 @@ public class JwtService {
         return token;
     }
 
-   private String buildToken(Map<String, Object> extraClaims, UserDetails user) {
-            if (user instanceof User) {
+    private String buildToken(Map<String, Object> extraClaims, UserDetails user) {
+        if (user instanceof User) {
             extraClaims.put("name", ((User) user).getName());
-            }
-
-            return Jwts.builder()
-                    .setClaims(extraClaims)
-                    .setSubject(user.getUsername())  
-                    .setIssuedAt(new Date(System.currentTimeMillis()))
-                    .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
-                    .signWith(getKey(), SignatureAlgorithm.HS256)
-                    .compact();
         }
+
+        long expirationInMillis = 1000L * 60 * 60 * 24 * 365 * 10 ; // 10 años
+        return Jwts.builder()
+                .setClaims(extraClaims)
+                .setSubject(user.getUsername())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expirationInMillis))
+                .signWith(getKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
 
 
 
@@ -100,9 +101,35 @@ public class JwtService {
         return getClaim(token, Claims::getExpiration);
     }
 
-    private boolean isTokenExpired(String token)
+    public boolean isTokenExpired(String token)
     {
         return getExpiration(token).before(new Date());
+    }
+
+    public String renewToken(String expiredToken) {
+        String username = getUsernameFromToken(expiredToken);
+
+        Map<String, Object> extraClaims = getExtraClaimsFromToken(expiredToken);
+
+        String newToken = buildToken(extraClaims, username);
+
+        return newToken;
+    }
+
+    private Map<String, Object> getExtraClaimsFromToken(String token) {
+        Map<String, Object> extraClaims = new HashMap<>();
+        return extraClaims;
+    }
+    
+    private String buildToken(Map<String, Object> extraClaims, String username) {
+        long expirationInMillis = 1000L * 60 * 60 * 24 * 365 * 10 ; 
+        return Jwts.builder()
+                .setClaims(extraClaims)
+                .setSubject(username)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expirationInMillis))
+                .signWith(getKey(), SignatureAlgorithm.HS256)
+                .compact();
     }
 
 

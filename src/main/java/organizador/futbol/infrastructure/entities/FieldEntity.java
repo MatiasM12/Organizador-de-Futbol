@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,12 +16,17 @@ public class FieldEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idField;
 
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private UserEntity userId;
     
     private String name;
     private String photo;
     private String mail;
+    private Integer size;
     private String phone;
+    private String location;
+    private Long price;
     
     
 	public Long getIdField() {
@@ -30,11 +37,11 @@ public class FieldEntity {
 		this.idField = idField;
 	}
 	
-	public Long getUserId() {
+	public UserEntity getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Long userId) {
+	public void setUserId(UserEntity userId) {
 		this.userId = userId;
 	}
 
@@ -68,6 +75,30 @@ public class FieldEntity {
 	
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
 	}
     
 }

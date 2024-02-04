@@ -1,6 +1,5 @@
 package organizador.futbol.infrastructure.entities;
 
-import java.time.LocalDate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +16,10 @@ public class AvailabilityEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAvailability;
 
-    private LocalDate date;
+    private String month;
+    private String day;
     private String hour;
+    private Boolean isRented;
 
     @ManyToOne
     @JoinColumn(name = "idField")
@@ -41,12 +42,21 @@ public class AvailabilityEntity{
 		this.field = field;
 	}
 
-	public LocalDate getDate() {
-		return date;
+
+	public String getMonth() {
+		return month;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
 	}
 
 	public String getHour() {
@@ -55,6 +65,14 @@ public class AvailabilityEntity{
 
 	public void setHour(String hour) {
 		this.hour = hour;
+	}
+
+	public Boolean getIsRented() {
+		return isRented;
+	}
+
+	public void setIsRented(Boolean isRented) {
+		this.isRented = isRented;
 	}
 
 }

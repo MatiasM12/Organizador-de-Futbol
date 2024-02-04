@@ -1,10 +1,11 @@
 package organizador.futbol.infrastructure.adapters.out;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-import organizador.futbol.domain.User;
 import organizador.futbol.infrastructure.entities.UserEntity;
 
 import org.springframework.stereotype.Repository;
@@ -12,9 +13,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface JpaUserRepository extends JpaRepository<UserEntity, Long>{
 
-	Optional<UserEntity> findByUsername(String username); 
+	Optional<UserEntity> findByUsername(String username);
 
-	void save(User user);
+	@Query("SELECT u FROM UserEntity u WHERE u.role.idRole = 1")
+	List<UserEntity> getAllPlayers(); 
 	
 }
 

@@ -46,4 +46,9 @@ public class JpaUserRepositoryAdapter implements UserOutputPort {
         );
         this.jpaUserRepository.deleteById(userEntity.getIdUser());
     }
+
+	@Override
+	public List<UserEntity> getAllPlayers() {
+		return jpaUserRepository.getAllPlayers();
+	}
 }

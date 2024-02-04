@@ -16,4 +16,6 @@ public interface FieldInputPort {
 
 	void deleteField(Long id);
 
+	List<Field> getFieldsByUserId(Long id_user);
+
 }

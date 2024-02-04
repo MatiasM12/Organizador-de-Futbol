@@ -7,19 +7,25 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
+import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
 
 @Component
 @Mapper(componentModel = "spring")
 public interface FieldMapper {
 
-    @Mappings({
+    FieldMapper INSTANCE =  Mappers.getMapper(FieldMapper.class);;
+
+	@Mappings({
             @Mapping(source = "idField", target = "idField"),
             @Mapping(source = "name", target = "name"),
             @Mapping(source = "photo", target = "photo"),
             @Mapping(source = "mail", target = "mail"),
             @Mapping(source = "phone", target = "phone"),
-            @Mapping(source = "userId", target = "userId")
+            @Mapping(source = "size", target = "size"),
+            @Mapping(source = "userId", target = "userId"),
+            @Mapping(source = "location", target = "location"),
+            @Mapping(source = "price", target = "price")
     })
     Field toField(FieldEntity fieldEntity);
 

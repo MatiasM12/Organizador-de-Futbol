@@ -1,10 +1,13 @@
 package organizador.futbol.infrastructure.entities;
 
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,6 +17,9 @@ public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRole;
+    
+    @OneToMany(mappedBy = "role") 
+    private List<UserEntity> users;
 
     private String name;
 

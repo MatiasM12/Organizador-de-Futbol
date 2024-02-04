@@ -16,4 +16,6 @@ public interface UserInputPort {
 
 	void deleteUser(Long id);
 
+	List<User> getAllPlayers();
+
 }

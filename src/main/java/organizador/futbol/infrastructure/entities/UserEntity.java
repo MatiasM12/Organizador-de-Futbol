@@ -1,19 +1,15 @@
 package organizador.futbol.infrastructure.entities;
 
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.JoinColumn;
 
@@ -21,7 +17,9 @@ import jakarta.persistence.JoinColumn;
 @Table(name = "user")
 public class UserEntity implements UserDetails{
 
-    @Id
+	private static final long serialVersionUID = 7922521664769421535L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUser;
 
@@ -30,12 +28,17 @@ public class UserEntity implements UserDetails{
     private String photo;
     private String mail;
     private String username;
-
-    private Long roleId;
+	private String phone;
+	private String position;
+	private Long age;
+	private String team;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private RoleEntity role;
     
     @Override
     public List<SimpleGrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + roleId));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
     }
 
     @Override
@@ -103,12 +106,44 @@ public class UserEntity implements UserDetails{
 		this.username = username;
 	}
 
-	public Long getRoleId() {
-		return roleId;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public Long getAge() {
+		return age;
+	}
+
+	public void setAge(Long age) {
+		this.age = age;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public RoleEntity getRoleId() {
+		return role;
+	}
+
+	public void setRoleId(RoleEntity roleId) {
+		this.role = roleId;
 	}
 
 	

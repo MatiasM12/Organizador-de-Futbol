@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import io.micrometer.common.util.StringUtils;
 import organizador.futbol.domain.User;
+import organizador.futbol.infrastructure.entities.UserEntity;
+import organizador.futbol.infrastructure.mappers.UserMapper;
 import organizador.futbol.infrastructure.ports.in.UserInputPort;
 import organizador.futbol.infrastructure.ports.out.UserOutputPort;
 
@@ -16,6 +19,7 @@ public class UserService implements UserInputPort {
 
     @Autowired
     private UserOutputPort userRepository;
+
 
     @Override
     public List<User> getAllUsers() {
@@ -35,23 +39,31 @@ public class UserService implements UserInputPort {
 
     @Override
     public User updateUser(Long id, User user) {
-        Optional<User> optionalExistingUser = userRepository.findById(id);
-        if (optionalExistingUser.isPresent()) {
-            User existingUser = optionalExistingUser.get();
-            existingUser.setName(user.getName());
-            existingUser.setPassword(user.getPassword());
-            existingUser.setPhoto(user.getPhoto());
-            existingUser.setMail(user.getMail());
-            existingUser.setUsername(user.getUsername());
-            existingUser.setRoleId(user.getRoleId());
-            return userRepository.save(existingUser);
-        } else {
-            return null;
-        }
+        return userRepository.findById(id)
+                .map(existingUser -> {
+                	existingUser.setName(StringUtils.isNotBlank(user.getName()) ? user.getName() : existingUser.getName());
+                	existingUser.setPhoto(StringUtils.isNotBlank(user.getPhoto()) ? "/img/" + user.getPhoto() : existingUser.getPhoto());
+                	existingUser.setMail(StringUtils.isNotBlank(user.getMail()) ? user.getMail() : existingUser.getMail());
+                	existingUser.setUsername(StringUtils.isNotBlank(user.getUsername()) ? user.getUsername() : existingUser.getUsername());
+                	existingUser.setPhone(StringUtils.isNotBlank(user.getPhone()) ? user.getPhone() : existingUser.getPhone());
+                	existingUser.setPosition(StringUtils.isNotBlank(user.getPosition()) ? user.getPosition() : existingUser.getPosition());
+                	existingUser.setAge(user.getAge()!= null ? user.getAge() : existingUser.getAge());
+                	existingUser.setTeam(StringUtils.isNotBlank(user.getTeam()) ? user.getTeam() : existingUser.getTeam());
+                	return userRepository.save(existingUser);
+                })
+                .orElse(null);
     }
+
 
     @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+
+    @Override
+	public List<User> getAllPlayers() {
+    	List<UserEntity> userEnties = userRepository.getAllPlayers();
+		return (List<User>) UserMapper.INSTANCE.toUsers(userEnties);
+	}
 }

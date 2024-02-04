@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import organizador.futbol.domain.User;
+import organizador.futbol.infrastructure.entities.UserEntity;
 
 public interface UserOutputPort {
 
@@ -14,4 +15,6 @@ public interface UserOutputPort {
 	User save(User user);
 
 	void deleteById(Long id);
+
+	List<UserEntity> getAllPlayers();
 }

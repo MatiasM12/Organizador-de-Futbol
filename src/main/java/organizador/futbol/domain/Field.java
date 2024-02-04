@@ -6,11 +6,14 @@ import lombok.Data;
 public class Field {
 
     private Long idField;
+    private User userId;
     private String name;
     private String photo;
     private String mail;
+    private Integer size;
     private String phone;
-    private Long userId;
+    private String location;
+    private Long price;
     
 	public Long getIdField() {
 		return idField;
@@ -52,12 +55,36 @@ public class Field {
 		this.phone = phone;
 	}
 
-	public Long getUserId() {
+	public User getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(User user) {
+		this.userId = user;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
 	}
 
 }

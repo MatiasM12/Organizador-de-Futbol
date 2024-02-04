@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Canchas</title>
+    <link rel="stylesheet" href="/css/editar-cancha.css">
+</head>
+<body>
+
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Editar Canchas</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <main class="grid-container" id="canchasContainer">
+        <!-- Contenido de canchas será agregado dinámicamente aquí -->
+    </main>
+
+    <!-- Ventana Modal -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <h2>Editar Cancha</h2>
+            
+            <!-- Formulario de Edición -->
+            <form id="formularioEditar">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="photo">Foto:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+        
+                <label for="mail">Correo:</label>
+                <input type="email" id="mail" name="mail" required>
+        
+                <label for="size">Capacidad:</label>
+                <input type="number" id="size" name="size" required>
+        
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+        
+                <label for="location">Ubicación:</label>
+                <input type="text" id="location" name="location" required>
+    
+        
+                <label for="price">Precio:</label>
+                <input type="number" id="price" name="price" required>
+                <button type="button" id="guardarCambiosBtn" class="guardarCambiosBtn">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+
+<script type="module" src="/js/editar-cancha.js"></script>
+<script>
+    function volverPagina() {
+        window.location.href = '/inicio-dueño.html';
+    }
+    function abrirModal() {
+        document.getElementById('modalEditar').style.display = 'block';
+    }
+
+    function cerrarModal() {
+        document.getElementById('modalEditar').style.display = 'none';
+    }
+</script>
+</body>
+</html>

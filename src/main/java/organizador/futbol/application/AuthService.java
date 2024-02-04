@@ -35,7 +35,9 @@ public class AuthService {
         String token=jwtService.getToken(user);
 
         AuthResponse authResponse = new AuthResponse();
+        authResponse.setUserId(((UserEntity) user).getIdUser());
         authResponse.setToken(token);
+        authResponse.setIdRole(((UserEntity) user).getRoleId().getIdRole());
 
         return authResponse;
     }
@@ -48,11 +50,19 @@ public class AuthService {
         UserEntity user = new UserEntity();
         user.setUsername(request.getUsername());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRoleId(request.getRoleId());
+        user.setRoleId(request.getRoleId()); 
+        user.setMail(request.getMail());
+        user.setName(request.getName());
+        user.setPhoto("/img/"+request.getPhoto());
+        user.setPhone(request.getPhone());
+        user.setAge(request.getAge());
+        user.setPosition(request.getPosition());
+        user.setTeam(request.getTeam());
 
         userRepository.save(user);
 
         AuthResponse authResponse = new AuthResponse();
+        authResponse.setUserId(user.getIdUser());
         authResponse.setToken(jwtService.getToken((UserDetails) user));
 
         return authResponse;

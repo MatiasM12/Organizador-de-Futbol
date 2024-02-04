@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/inicio-dueño.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Página de Inicio - Dueño de Cancha</title>
+</head>
+<body>
+    <header>
+        <button class="close-button"><img src="/img/cerrar-sesion.png" alt=""></button>
+        <h1>Inicio</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <main class="grid-container">
+        <a href="/disponibilidad.html" class="card a">
+            <h2>Ver Disponibilidad de la cancha</h2>
+            <p>Ver y editar horarios disponibles de la cancha.</p>
+        </a>
+
+        <a href="/agregar-cancha.html" class="card b">
+            <h2>Agregar Cancha</h2>
+            <p>Añade una nueva cancha a tu establecimiento.</p>
+        </a>
+
+        <a href="/editar-cancha.html" class="card c">
+            <h2>Editar Cancha</h2>
+            <p>Modifica la información de tus canchas existentes.</p>
+        </a>
+
+        <a href="/perfil.html" class="card d">
+            <h2>Ver perfil</h2>
+            <p>Edita los datos de tu perfil.</p>
+        </a>
+    </main>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Página de Inicio para Dueño de Cancha</p>
+    </footer>
+
+    <script type="module" src="/js/inicio-dueño.js"></script>
+</body>
+</html>

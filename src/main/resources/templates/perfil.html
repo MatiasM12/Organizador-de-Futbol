@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Perfil del Jugador</title>
+</head>
+<body>
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Perfil</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <div class="perfil-container">
+        <div class="datos-jugador" id="datos-jugador">
+            
+        </div>
+        <button id="editarBtn">Editar</button>
+
+        <div class="comentarios-section">
+            <h2>Comentarios</h2>
+            <ul id="comentariosList">
+                <!-- La lista de comentarios se actualizará aquí -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <!-- Ventana modal para la edición de datos -->
+    <div class="modal" id="modalEditar">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrarModal">&times;</span>
+            <h2>Editar Datos</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Nombre del Jugador">
+            <label for="mail">Mail:</label>
+            <input type="text" id="mail" placeholder="Mail del Jugador">
+            <label for="age">Edad:</label>
+            <input type="number" id="age" placeholder="Edad del Jugador">
+            <label for="position" id="label-position">Posicion:</label>
+            <select id="position" name="position" required>
+                <option value=""></option>
+                <option value="delantero">Delantero</option>
+                <option value="defensor">Defensor</option>
+                <option value="mediocampista">Mediocampista</option>
+                <option value="arquero">Arquero</option>
+            </select>
+            <label for="phone">Telefono:</label>
+            <input type="text" id="phone" placeholder="Telefono del Jugador">
+            <label for="team" id="label-team">Equipo:</label>
+            <input type="text" id="team" placeholder="Equipo del Jugador">
+            <label for="imagen" id="subir-imagen">Subir Imagen:</label>
+            <input type="file" id="imagen" accept="image/*">
+            <button id="guardarCambiosBtn">Guardar Cambios</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Perfil</p>
+    </footer>
+    <script type="module" src="/js/perfil.js"></script>
+    <script>
+        function volverPagina() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

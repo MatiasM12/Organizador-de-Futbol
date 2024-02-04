@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/armar-partido.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <title>Armar Partido</title>
+</head>
+<body>
+    <header>
+        <button class="close-button" onclick="volverPagina()"><img src="/img/volver.png" alt=""></button>
+        <h1>Armar Partido</h1>
+        <button class="notification-button" id="openModalBtn">
+            <img src="/img/notificacion.png" alt="">
+            <span class="notification-counter">0</span>
+        </button>
+    </header>
+
+    <main>
+        
+        
+        <div class="section-container">
+            <div class="section">
+                <h2>Seleccionar Cancha</h2>
+                <section class="cancha-section card" id="seleccionar-cancha">
+                    <div class="card-content">
+                    </div>
+                </section>
+            </div>
+    
+            <div class="section">
+                <h2>Seleccionar Jugadores</h2>
+                <section class="jugadores-section card" id="seleccionar-jugadores">
+                    <div class="card-content">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Detalles del Partido</h2>
+            <div class="detalles-partido">
+                <label for="dia">Dia:</label>
+                <select id="dia" name="dia">
+                    <option value="vacio"></option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
+                <label for="hora">Horario:</label>
+                <select id="hora" name="hora">
+                    <option value="vacio">No Hay</option>
+                </select>
+                
+                <label for="nombrePartido">Nombre del Partido:</label>
+                <input type="text" id="nombrePartido" name="nombrePartido" placeholder="Ingrese el nombre del partido">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Jugadores seleccionados</h2>
+            <section class="jugadores-seleccionados-teams">
+                <section class="jugadores-seleccionados" id="team1-section">
+                    <h3>Team 1</h3>
+                    <!-- Lista de jugadores seleccionados para Team 1 -->
+                </section>
+                <section class="jugadores-seleccionados" id="team2-section">
+                    <h3>Team 2</h3>
+                    <!-- Lista de jugadores seleccionados para Team 2 -->
+                </section>
+            </section>
+
+            <div id="loading-overlay">
+                <div class="loader"></div>
+            </div>
+            
+            <div id="success-message" style="display:none;">
+                <p>Partido creado con éxito</p>
+                <button id="volver-btn">Volver al inicio</button>
+            </div>
+            <button id="reordenar-teams-btn"><img id="reordenar-teams-btn-img" src="/img/intercambiar.png" alt=""></button>
+            <button id="notificar-partido-btn">Armar Partido</button>
+        </div>
+        
+
+        
+    </main>
+
+    <div class="modal" id="notificacionesModal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="closeModalBtn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Notificaciones Pendientes</h2>
+            <ul id="notificacionesList">
+                <!-- Lista de notificaciones -->
+            </ul>
+            <button id="verPartidosBtn">Ver partidos</button>
+        </div>
+    </div>
+
+    <div class="modal" id="canchas-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Lista de Canchas</h2>
+            <div class="canchas-grid" id="canchas-list-modal">
+                <!-- Aquí se cargarán dinámicamente las canchas -->
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="modal" id="jugadores-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 >Lista de Jugadores</h2>
+            <ul id="jugadores-list-modal">
+                <!-- Aquí se cargarán dinámicamente los jugadores -->
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Armar Partido</p>
+    </footer>
+
+    <script type="module" src="/js/armar-partido.js"></script>
+    <script>
+        function volverPagina() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

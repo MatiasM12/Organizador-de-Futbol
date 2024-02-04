@@ -18,8 +18,8 @@ public interface MatchMapper {
             @Mapping(source = "idMatch", target = "idMatch"),
             @Mapping(source = "date", target = "date"),
             @Mapping(source = "hour", target = "hour"),
+            @Mapping(source = "title", target = "title"),
             @Mapping(source = "fieldId", target = "fieldId")
-            // Puedes agregar más mappings según sea necesario
     })
     Match toMatch(MatchEntity matchEntity);
 

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/main/resources/static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
     <title>Login</title>
 </head>
-<body >
+<body>
     <div class="login-container">
         <h1>Login</h1>
         <form id="login-form">
@@ -17,9 +18,10 @@
             <input type="password" id="password" name="password" required>
 
             <button type="button" onclick="validateLogin()">Iniciar sesión</button>
+            <button type="button" onclick="registrarse()" class="register-btn">Registrate</button>
         </form>
     </div>
 
-    <script src="/src/main/resources/static/js/login.js"></script>
+    <script src="/static/js/login.js"></script>
 </body>
 </html>

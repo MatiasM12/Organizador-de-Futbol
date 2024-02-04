@@ -48,4 +48,9 @@ public class JpaFieldRepositoryAdapter implements FieldOutputPort {
         );
         this.jpaFieldRepository.deleteById(fieldEntity.getIdField());
     }
+
+	@Override
+	public List<FieldEntity> findByUserId(Long id_user) {
+		return jpaFieldRepository.findByUserId(id_user);
+	}
 }

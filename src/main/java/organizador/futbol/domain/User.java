@@ -11,7 +11,11 @@ public class User {
 	private String photo;
 	private String mail;
 	private String username;
-	private Long roleId;
+	private String phone;
+	private String position;
+	private Long age;
+	private String team;
+	private Role roleId;
 
 	public Long getIdUser() {
 		return idUser;
@@ -61,11 +65,43 @@ public class User {
 		this.username = username;
 	}
 
-	public Long getRoleId() {
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public Long getAge() {
+		return age;
+	}
+
+	public void setAge(Long age) {
+		this.age = age;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public Role getRoleId() {
 		return roleId;
 	}
 
-	public void setRoleId(Long roleId) {
+	public void setRoleId(Role roleId) {
 		this.roleId = roleId;
 	}
 

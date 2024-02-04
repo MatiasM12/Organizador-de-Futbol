@@ -1,46 +1,49 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    height: auto;
-    padding-top: 30px;
-    background-color: #262626;
+    align-items: center;
+    background: url('/img/jugador-de-futbol.png') repeat; 
+    background-color: #262626; 
 }
 
-.login-container,
-.register-container {
+#register-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.section-a,
+.section-b {
     background-color: #333;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 5px;
-    width: 500px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
-    transition: box-shadow 0.3s;
-}
-
-.login-container:hover,
-.register-container:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
-}
-
-h1 {
-    color: #fff;
-}
-
-form {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    margin-top: 10px;
-    text-align: left;
+
+h1 {
     color: #fff;
+    text-align: center;
+    margin-bottom: 30px; 
 }
 
-input {
+label {
+    text-align: left;
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+}
+
+input,
+select {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -56,11 +59,78 @@ button {
     color: #fff;
     padding: 10px;
     border: none;
-    margin-top: 5px;
     border-radius: 3px;
     cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+#error-message {
+    display: none;
+    position: fixed;
+    top: 50;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff0000;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#error-message p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+}
+
+#success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#success-message p {
+    margin: 0;
+    font-size: 18px;
+    width: auto;
+}
+
+#success-message button {
+    background: #fff;
+    color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#success-message button:hover {
+    background: #2a602c;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    #register-form {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna cuando la pantalla es más estrecha */
+    }
 }

@@ -1,0 +1,320 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.close-button,
+.notification-button{
+    background-color: #1a1a1a;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.close-button img,
+.notification-button img{
+    height: 30px;
+    width: 30px;
+}
+
+.notification-counter {
+    display: inline-block;
+    background-color: #D21312;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    margin-left: -25px;
+    margin-bottom: 25px; 
+}
+
+.detalles-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancha-info img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 5px;
+    align-items: center;
+    text-align: center;
+    object-fit: cover;
+}
+
+.datos-cancha {
+    min-width: 300px;
+    height: auto;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.team-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-section h3,.team-section p{
+    padding: 10px;
+ }
+
+.jugadores-seleccionados {
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    height: 100%; 
+}
+
+.jugadores-seleccionados h2 {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.lista-jugadores {
+    margin: 0%;
+    padding: 10px;
+    justify-content: center;
+}
+
+.jugador-seleccionado {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #282828;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 10px;
+    width: 800px;
+    transition: background-color 0.3s;
+}
+
+.jugador-seleccionado:hover {
+    background-color: #555;
+}
+
+.jugador-seleccionado-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.jugador-seleccionado-details {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    word-wrap: break-word;
+}
+
+.jugador-seleccionado-details h3,
+.jugador-seleccionado-details p {
+    width: auto;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.quitar-btn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px; 
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.quitar-btn:hover {
+    background-color: #777;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: #1a1a1a;
+    margin: 3% auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.cerrar-modal {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#notificacionesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notificacionesList li {
+    background-color: #282828;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+#notificacionesList li::before {
+    content: '\2022';
+    color: #D21312;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; 
+}
+
+#verPartidosBtn, #alineacion-team2, #alineacion-team1 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#verPartidosBtn:hover, #alineacion-team2:hover, #alineacion-team1:hover {
+    background-color: #0056b3;
+}
+
+#cancelar-partido{
+    background-color: #c50a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#cancelar-partido:hover{
+    background-color: #b30000b9;
+}
+
+footer {
+    text-align: center;
+    height: 70px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 320px) {
+    header h1{
+        font-size: 1.3rem;
+        width: 50px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 2rem;
+        text-align: center;
+        gap: 70px;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .detalles-container{
+        padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .datos-cancha {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .lista-jugadores {
+        width: 100%;
+    }
+    .jugador-seleccionado {
+        width: 95%;
+    }
+    .jugador-seleccionado-details h3,
+    .jugador-seleccionado-details p {
+        font-size: 0.7rem;
+    }
+
+    .team-section{
+        width: 90%;
+    }
+    
+    .team-section h3,.team-section p{
+        font-size: 0.9rem;
+        padding: 5px;
+     }
+
+}
+

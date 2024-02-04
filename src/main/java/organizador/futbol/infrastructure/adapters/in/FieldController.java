@@ -1,5 +1,6 @@
 package organizador.futbol.infrastructure.adapters.in;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,5 +52,11 @@ public class FieldController {
     public ResponseEntity<Void> deleteField(@PathVariable Long id) {
         fieldService.deleteField(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    @GetMapping("/user/{id_user}")
+    public ResponseEntity<List<Field>> getFieldsByUserId(@PathVariable Long id_user) {
+        List<Field> userMatches = fieldService.getFieldsByUserId(id_user);
+        return new ResponseEntity<>(userMatches, HttpStatus.OK);
     }
 }

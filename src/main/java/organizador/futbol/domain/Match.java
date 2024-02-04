@@ -1,6 +1,8 @@
 package organizador.futbol.domain;
 
-import java.time.LocalDate;
+
+import java.util.List;
+
 import lombok.Data;
 
 
@@ -8,9 +10,11 @@ import lombok.Data;
 public class Match {
 
     private Long idMatch;
-    private LocalDate date;
+    private String date;
     private String hour;
-    private Long fieldId;
+    private String title;
+    private List<MatchParticipants> matchParticipants;
+    private Field fieldId;
     
 	public Long getIdMatch() {
 		return idMatch;
@@ -20,11 +24,11 @@ public class Match {
 		this.idMatch = idMatch;
 	}
 	
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
 	
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
@@ -36,12 +40,28 @@ public class Match {
 		this.hour = hour;
 	}
 
-	public Long getFieldId() {
+	public Field getFieldId() {
 		return fieldId;
 	}
 
-	public void setFieldId(Long fieldId) {
+	public void setFieldId(Field fieldId) {
 		this.fieldId = fieldId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public List<MatchParticipants> getMatchParticipants() {
+		return matchParticipants;
+	}
+
+	public void setMatchParticipants(List<MatchParticipants> matchParticipants) {
+		this.matchParticipants = matchParticipants;
 	}
     
     
