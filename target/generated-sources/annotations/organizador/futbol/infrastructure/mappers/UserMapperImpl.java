@@ -10,8 +10,8 @@ import organizador.futbol.infrastructure.entities.UserEntity;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-02-03T23:08:38-0300",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 18 (Oracle Corporation)"
+    date = "2024-02-04T15:33:09-0300",
+    comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 3.35.0.v20230814-2020, environment: Java 17.0.8.1 (Eclipse Adoptium)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {

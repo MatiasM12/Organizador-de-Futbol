@@ -36,10 +36,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String token = getTokenFromRequest(request);
         String username;
 
-
-        if (token == null && !request.getRequestURI().equals("/auth/login")) {
-            System.out.println("Redirecting to login page");
-            response.sendRedirect("/auth/login");
+        if (token==null)
+        {
+            filterChain.doFilter(request, response);
             return;
         }
 

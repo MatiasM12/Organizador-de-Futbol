@@ -64,6 +64,7 @@ public class AuthService {
         AuthResponse authResponse = new AuthResponse();
         authResponse.setUserId(user.getIdUser());
         authResponse.setToken(jwtService.getToken((UserDetails) user));
+        System.out.println(authResponse.getToken());
 
         return authResponse;
     }
