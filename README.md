@@ -54,5 +54,8 @@ El sistema cuenta con las siguientes funcionalidades:
 
 ![Minimal Aesthetic Summer Photo Collage (2)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/09e6a1df-6629-4e7c-bd9c-3864d2943a06)
 
-¡Gracias por explorar nmi sistema de organización de partidos de fútbol! ⚽🏟️
+### Diagrana de Base de datos (DER)
+![diagram-export-2-2-2024-14_54_12](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/4f238a5f-40fd-4d08-a8b0-faa307c9be35)
+
+¡Gracias por explorar mi sistema de organización de partidos de fútbol! ⚽🏟️
 
