@@ -52,5 +52,7 @@ El sistema cuenta con las siguientes funcionalidades:
 
 ![Minimal Aesthetic Summer Photo Collage (1)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/3ad4870d-e61d-465a-9ef9-384ef1f6da9b)
 
-¡Gracias por explorar nuestro sistema de organización de partidos de fútbol! ⚽🏟️
+![Minimal Aesthetic Summer Photo Collage (2)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/09e6a1df-6629-4e7c-bd9c-3864d2943a06)
+
+¡Gracias por explorar nmi sistema de organización de partidos de fútbol! ⚽🏟️
 
