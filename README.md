@@ -48,6 +48,9 @@ El sistema cuenta con las siguientes funcionalidades:
 
 - Los jugadores reciben notificaciones sobre los partidos pendientes.
 
+### Demo:
+[Demo del sistema, presionar aqui](https://youtu.be/e3loEmOlutg)
+
 ## Capturas del sistema
 
 ![Minimal Aesthetic Summer Photo Collage (1)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/3ad4870d-e61d-465a-9ef9-384ef1f6da9b)
