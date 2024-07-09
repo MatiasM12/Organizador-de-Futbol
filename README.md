@@ -1,8 +1,8 @@
-# Organizador de Partidos de Fútbol
+# Organizador de Partidos de Fútbol ⚽
 
 Este proyecto es un sistema web desarrollado para organizar partidos de fútbol. El backend está construido en Spring Boot utilizando JPA, Spring Security y JSON Web Tokens (JWT), con una base de datos MySQL. Se ha implementado una arquitectura hexagonal para garantizar la modularidad y escalabilidad del sistema. Por otro lado, el frontend utiliza HTML, CSS y JavaScript para la interfaz gráfica.
 
-## Características Principales
+## Características Principales 🛠️
 
 ### Backend:
 
@@ -22,7 +22,7 @@ Este proyecto es un sistema web desarrollado para organizar partidos de fútbol.
 - **Postman:** Utilizado para probar las APIs del backend durante el desarrollo.
 - **MySQL Workbench:** Herramienta de administración de base de datos utilizada para gestionar la base de datos MySQL.
 
-## Funcionalidades del Sistema
+## Funcionalidades del Sistema ⚙️
 
 El sistema cuenta con las siguientes funcionalidades:
 
@@ -67,14 +67,13 @@ El sistema cuenta con las siguientes funcionalidades:
 </div>
 <br><br>
 
-## Capturas del sistema
+## Algunas pantallas 💻
 
-![Minimal Aesthetic Summer Photo Collage (1)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/3ad4870d-e61d-465a-9ef9-384ef1f6da9b)
+![l (18)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/f6f8c157-1906-4b0c-92c4-ab42cbd6891d)
+![l (19)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/bbb48c96-09d2-4637-ae5d-ee20a59db709)
 
-![Minimal Aesthetic Summer Photo Collage (2)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/09e6a1df-6629-4e7c-bd9c-3864d2943a06)
-
-### Diagrama de Base de datos (DER)
+### Diagrama de Base de datos (DER) 🖍️
 ![diagram-export-2-2-2024-14_54_12](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/4f238a5f-40fd-4d08-a8b0-faa307c9be35)
 
-¡Gracias por explorar mi sistema de organización de partidos de fútbol! ⚽🏟️
+¡Gracias por explorar mi proyecto de organización de partidos de fútbol! ⚽🏟️
 
