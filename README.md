@@ -48,8 +48,24 @@ El sistema cuenta con las siguientes funcionalidades:
 
 - Los jugadores reciben notificaciones sobre los partidos pendientes.
 
-### Demo:
-[Demo del sistema, presionar aqui](https://youtu.be/e3loEmOlutg)
+<div >
+<h2 >Demo 👨🏻‍💻</h2>
+<table align="left" >
+<tr border="none">
+  <td width="25%" align="center">
+    <p align="center">
+     <a href="https://youtu.be/e3loEmOlutg" title="Go to Source">
+        <img align="center" width=100%  src="https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/25708c01-064d-4977-83cb-9f15ddfd79c0" alt="VIDEO" /></a>
+      </p>
+    <p align="center">
+        <a href="https://youtu.be/e3loEmOlutg" target="blank"><img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"  /></a>
+      <a href="https://github.com/MatiasM12/Organizador-de-Futbol" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="" /></a>
+    </p>       
+  </td> 
+</tr>
+</table>
+</div>
+<br><br>
 
 ## Capturas del sistema
 
@@ -57,7 +73,7 @@ El sistema cuenta con las siguientes funcionalidades:
 
 ![Minimal Aesthetic Summer Photo Collage (2)](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/09e6a1df-6629-4e7c-bd9c-3864d2943a06)
 
-### Diagrana de Base de datos (DER)
+### Diagrama de Base de datos (DER)
 ![diagram-export-2-2-2024-14_54_12](https://github.com/MatiasM12/Organizador-de-Futbol/assets/86579814/4f238a5f-40fd-4d08-a8b0-faa307c9be35)
 
 ¡Gracias por explorar mi sistema de organización de partidos de fútbol! ⚽🏟️
